@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Sister!</title>
+<style>
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #000;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3);
+  animation: fadeIn 2s ease-in;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.birthday-card {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.birthday-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.3);
+}
+
+.birthday-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 5px solid #ffc107;
+  margin-bottom: 20px;
+}
+
+.birthday-message {
+  font-size: 20px;
+}
+
+.birthday-message p {
+  margin: 10px 0;
+}
+
+.birthday-message p:first-child {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.birthday-message p:last-child {
+  font-style: italic;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="birthday-card">
+    <img src="sis/sis2.jpg" alt="Happy Birthday Sister" class="birthday-img" id="birthday-img">
+    <div class="birthday-message">
+      <p style="color: black; font-weight: bold;">Happy Birthday, Sister!</p>
+      <p>Wishing you a day filled with love, laughter, and all the happiness in the world.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  const images = [
+    "sis/sis.png", // Image 1 URL
+    "sis/both.png", // Image 2 URL
+    "sis/both.png","sis/both.png"  // Image 3 URL
+    // Add more image URLs as needed
+  ];
+
+  let currentIndex = 0;
+  const imgElement = document.getElementById("birthday-img");
+
+  function changeImage() {
+    imgElement.src = images[currentIndex];
+    currentIndex = (currentIndex + 1) % images.length;
+  }
+
+  // Change image every 3 seconds (adjust as needed)
+  setInterval(changeImage, 3000);
+</script>
+
+</body>
+</html>
